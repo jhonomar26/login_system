@@ -1,0 +1,14 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración local
+.env
+*.log
+
+# Archivos de compilación
+*.tmp
+
+# Archivos de XAMPP/WAMP
+/xampp/*
+/wamp/*
