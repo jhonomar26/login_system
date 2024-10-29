@@ -30,22 +30,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <div class="container">
-        <h2>Iniciar Sesión</h2>
-        <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
-        <form method="POST">
-            <div class="form-group">
-                <label for="username">Usuario</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2>Iniciar Sesión</h2>
+                        <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="username">Usuario</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </form>
+                        <p>¿No tienes cuenta? <a href="register.php">Registrar</a></p>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-        </form>
-        <p>¿No tienes cuenta? <a href="register.php">Registrar</a></p>
+        </div>
     </div>
+
 </body>
 
 </html>
