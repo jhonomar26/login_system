@@ -12,3 +12,5 @@ Thumbs.db
 # Archivos de XAMPP/WAMP
 /xampp/*
 /wamp/*
+config.php
+

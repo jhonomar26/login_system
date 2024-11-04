@@ -7,12 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
+    $stmt->execute(params: [$username]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
-        header("Location: index.php");
+        header("Location: tasks.php");
     } else {
         $error = "Usuario o contraseña incorrectos.";
     }
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-md-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h2>Iniciar Sesión</h2>
+                        <h2 class="center">Iniciar Sesión</h2>
                         <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
                         <form method="POST">
                             <div class="form-group">
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="password">Contraseña</label>
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                            <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
                         </form>
                         <p>¿No tienes cuenta? <a href="register.php">Registrar</a></p>
                     </div>
